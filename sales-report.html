@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Distribuidora ROCO C.A</h1>
+    </header>
+    <div class="container">
+        <button id="toggleMenu" class="toggle-button">🏠</button>
+
+        <!-- Menú lateral -->
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li>
+                        <button class="menu-item" onclick="location.href='inicio.html'">🏡 Inicio</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="toggleSubMenu('inventarioSubmenu')">🗂 Inventario</button>
+                        <ul id="inventarioSubmenu" class="submenu">
+                            <!-- Submenús dinámicos cargados desde main.js -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='register-local.html'">🏢 Registrar Local</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='accounting.html'">💰 Contabilidad</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='history.html'">📜 Historial</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='deliveries.html'">🚚 Entregas/Recogidas</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='login.html'">❌ Cerrar Sesión</button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main>
+            <h2>Reporte de Ventas</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesReportTableBody">
+                        <!-- Contenido dinámico cargado desde main.js -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <!-- Botón de Regresar -->
+        <button id="backButton" onclick="window.history.back()">⬅️ Regresar</button>
+    </div>
+</body>
+</html>

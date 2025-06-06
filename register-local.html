@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar y Actualizar Cliente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Distribuidora ROCO C.A</h1>
+    </header>
+    <div class="container">
+        <button id="toggleMenu" class="toggle-button">🏠</button>
+
+        <!-- Menú lateral -->
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li>
+                        <button class="menu-item" onclick="location.href='inicio.html'">🏡 Inicio</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="toggleSubMenu('inventarioSubmenu')">🗂 Inventario</button>
+                        <ul id="inventarioSubmenu" class="submenu">
+                            <!-- Submenús dinámicos cargados desde main.js -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='accounting.html'">💰 Contabilidad</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='history.html'">📜 Historial</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='deliveries.html'">🚚 Entregas/Recogidas</button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='login.html'">❌ Cerrar Sesión</button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main>
+            <h2>Registrar Nuevo Cliente</h2>
+            <div class="card">
+                <form id="registerLocalForm">
+                    <label for="localName">Nombre del Cliente:</label>
+                    <input type="text" id="localName" name="localName" required>
+
+                    <label for="localAddress">Dirección:</label>
+                    <input type="text" id="localAddress" name="localAddress" required>
+
+                    <label for="localEmail">Correo Electrónico:</label>
+                    <input type="email" id="localEmail" name="localEmail" required>
+
+                    <label for="botellones">Cantidad Inicial de Botellones:</label>
+                    <input type="number" id="botellones" name="botellones" min="0" required>
+
+                    <label for="productType">Tipo de Producto:</label>
+                    <select id="productType" name="productType" required>
+                        <option value="agua">Agua</option>
+                        <option value="hielo">Hielo</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
+
+                    <label for="waterPrice">Precio del Agua ($):</label>
+                    <input type="number" id="waterPrice" name="waterPrice" min="0" step="0.01">
+
+                    <label for="icePrice">Precio del Hielo ($):</label>
+                    <input type="number" id="icePrice" name="icePrice" min="0" step="0.01">
+
+                    <button type="submit">Registrar Cliente</button>
+                </form>
+            </div>
+
+            <h2>Actualizar Datos del Cliente</h2>
+            <div class="card">
+                <form id="updateClientForm">
+                    <label for="updateLocal">Selecciona un Cliente:</label>
+                    <select id="updateLocal" required>
+                        <option value="" disabled selected>Selecciona un Cliente</option>
+                        <!-- Opciones dinámicas cargadas desde main.js -->
+                    </select>
+
+                    <label for="updateAddress">Nueva Dirección:</label>
+                    <input type="text" id="updateAddress" name="updateAddress">
+
+                    <label for="updateEmail">Nuevo Correo Electrónico:</label>
+                    <input type="email" id="updateEmail" name="updateEmail">
+
+                    <label for="updateProductType">Actualizar Producto:</label>
+                    <select id="updateProductType">
+                        <option value="agua">Agua</option>
+                        <option value="hielo">Hielo</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
+
+                    <label for="updateWaterPrice">Nuevo Precio del Agua ($):</label>
+                    <input type="number" id="updateWaterPrice" name="updateWaterPrice" min="0" step="0.01">
+
+                    <label for="updateIcePrice">Nuevo Precio del Hielo ($):</label>
+                    <input type="number" id="updateIcePrice" name="updateIcePrice" min="0" step="0.01">
+
+                    <button type="submit">Actualizar Cliente</button>
+                </form>
+            </div>
+        </main>
+                <!-- Botón de Regresar -->
+                <button id="backButton" onclick="window.history.back()">⬅️ Regresar</button>
+    </div>
+</body>
+</html>

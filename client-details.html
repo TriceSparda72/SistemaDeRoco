@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Cliente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Distribuidora ROCO C.A</h1>
+    </header>
+    <div class="container">
+        <button id="toggleMenu" class="toggle-button">🏠</button>
+
+        <!-- Menú lateral -->
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li>
+                        <button class="menu-item" onclick="location.href='inicio.html'">
+                            🏡 Inicio
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="toggleSubMenu('inventarioSubmenu')">
+                            🗂 Inventario
+                        </button>
+                        <ul id="inventarioSubmenu" class="submenu">
+                            <!-- Submenús dinámicos cargados automáticamente -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='register-local.html'">
+                            🏢 Registrar Local
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='accounting.html'">
+                            💰 Contabilidad
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='history.html'">
+                            📜 Historial
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='deliveries.html'">
+                            🚚 Entregas/Recogidas
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" onclick="location.href='login.html'">
+                            ❌ Cerrar Sesión
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main id="mainContent">
+            <h2>Detalles del Cliente</h2>
+            <div class="card" id="clientDetails">
+                <!-- Información del cliente cargada dinámicamente -->
+            </div>
+
+            <!-- Tabla adicional para mostrar Local y Almacén -->
+            <div class="card">
+                <h3>Estado del Local y Almacén</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Local</th>
+                            <th>Almacén</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="localStock">N/A</td>
+                            <td id="warehouseStock">N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Botón de Regresar -->
+        <button id="backButton" onclick="window.history.back()">⬅️ Regresar</button>
+    </div>
+</body>
+</html>
